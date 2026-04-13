@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.12"
+  version "0.6.13"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.12/finetype-v0.6.12-aarch64-apple-darwin.tar.gz"
-      sha256 "004966181773bd8ae059cb8d1fdb1a41721c2ab20216051fce34d4e0fd94c5c7"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.13/finetype-v0.6.13-aarch64-apple-darwin.tar.gz"
+      sha256 "23a7757fdaf144c756f139cd05540569cfe8ab7702f2012840cfa1cf54c92ff9"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.12/finetype-v0.6.12-x86_64-apple-darwin.tar.gz"
-      sha256 "525bd7a9ab66ffb90fcd6d2461ec13d5369799e95fb25904b0d133d00e26ccef"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.13/finetype-v0.6.13-x86_64-apple-darwin.tar.gz"
+      sha256 "d0a8c814fc935bd30a187700c3c9a5ddf719a442076db319dde9f3a37d4a54c3"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.12/finetype-v0.6.12-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2ca5bed2fbb1d928866ed6a14307ce3571f621685759c4662e2eecf357d13b52"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.13/finetype-v0.6.13-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "46d10cdc40829adbd5225ed5730ef2ea068c7a2f81b674e296305a06b4a81af6"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.12/finetype-v0.6.12-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a5305d85950accf56c78a252fa345a7f819eba153bf27bfc836e10243e8bfdb2"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.13/finetype-v0.6.13-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4ea01b39b197cb3a551c33dfb218cb36ea34721a52fbe5e34a2b62810551e36b"
     end
   end
 
