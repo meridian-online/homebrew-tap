@@ -7,20 +7,20 @@ class Finetype < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/meridian-online/finetype/releases/download/v0.6.16/finetype-v0.6.16-aarch64-apple-darwin.tar.gz"
-      sha256 "615f47962b0135cd30fb3ace9a3d6ff5c1d063c587e1d58143f27cc0289a491f"
+      sha256 "e069735c83c6a23c31a0fefd126b596dce5218e6ca64c99aaa17d1262bfa4b29"
     else
       url "https://github.com/meridian-online/finetype/releases/download/v0.6.16/finetype-v0.6.16-x86_64-apple-darwin.tar.gz"
-      sha256 "0ec2894c8e651e6dc64053e188e467be7b38fe7520a4df1eba7a7ab78f6dc402"
+      sha256 "9baf3671380cf1216ee34a6154199cf05beea2af4c15b792d0390d3b9484240d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/meridian-online/finetype/releases/download/v0.6.16/finetype-v0.6.16-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "042537004e2a786c100a58664700352f742b1ac56108fbd9b882223ef580aba8"
+      sha256 "2e4cb168cbd4d957bf21889ed0636be55cb3d88790cc61715ff6940bdb43e662"
     else
       url "https://github.com/meridian-online/finetype/releases/download/v0.6.16/finetype-v0.6.16-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "f7adae298c2f24d1335ebbfb0e75a8f51095a0ad9cc14755fa7075f00cb96489"
+      sha256 "7fc53586224e8ed95544723291def2d97b36228043439d5482432e87228482e7"
     end
   end
 
