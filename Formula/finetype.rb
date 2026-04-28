@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.18"
+  version "0.6.19"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.18/finetype-v0.6.18-aarch64-apple-darwin.tar.gz"
-      sha256 "806edd8f077fb6d21baa3f598fd90c9d9f4abd08be80b806e70cf5234bb8afcc"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-aarch64-apple-darwin.tar.gz"
+      sha256 "193e95d537684e8b44ef1b30271f8ff7d0f43d105a78dc9c4f530b6535cbc5bd"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.18/finetype-v0.6.18-x86_64-apple-darwin.tar.gz"
-      sha256 "2ef3670453ed5c2e447eb1bb117d204d33af775c872f49bdc4f6af172900ee89"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-x86_64-apple-darwin.tar.gz"
+      sha256 "0a407bbf6c9483dbe1672b7a2c5b42ddf3973281ed527655dcaafa197a446480"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.18/finetype-v0.6.18-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "6faef35ae051895d28a53fd689d70b569f3e332ec4b24e4e715e11782070e5b9"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "41e9192a0f95615a139105a346912deced8b4347f864910e97d43d53e4857cc3"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.18/finetype-v0.6.18-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "4fcddca76d4752f254d2b1f1494ee3eb602d6716e234a926b384d7e7a29c4b98"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "eb49df27d37a5311c9c5111e8b83f116ee85f2216fd98cd408b4dfee3afb88ec"
     end
   end
 
