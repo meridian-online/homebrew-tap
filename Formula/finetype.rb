@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.19"
+  version "0.6.20"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-aarch64-apple-darwin.tar.gz"
-      sha256 "193e95d537684e8b44ef1b30271f8ff7d0f43d105a78dc9c4f530b6535cbc5bd"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.20/finetype-v0.6.20-aarch64-apple-darwin.tar.gz"
+      sha256 "ea6a01991500b3a51ce1627dd10b77c780c066ec2aac60f662cfc4c0fdd9bb5d"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-x86_64-apple-darwin.tar.gz"
-      sha256 "0a407bbf6c9483dbe1672b7a2c5b42ddf3973281ed527655dcaafa197a446480"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.20/finetype-v0.6.20-x86_64-apple-darwin.tar.gz"
+      sha256 "e59e514b26716e7df88abcb36ac712542d0f36efe56267e24cc044609c5b7e58"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "41e9192a0f95615a139105a346912deced8b4347f864910e97d43d53e4857cc3"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.20/finetype-v0.6.20-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "c2bf528b2dff3ef4634352f33503038b8a9920f69d0dfe89a48d455f75ec8fc7"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.19/finetype-v0.6.19-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "eb49df27d37a5311c9c5111e8b83f116ee85f2216fd98cd408b4dfee3afb88ec"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.20/finetype-v0.6.20-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "bcefbc2c9ce6c7e47b5d908fd0e9c488558a34759b847df9c7919c24e7ecbb0b"
     end
   end
 
