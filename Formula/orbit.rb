@@ -2,25 +2,25 @@ class Orbit < Formula
   desc "Files-canonical agent substrate for Claude Code orbit workflow"
   homepage "https://meridian.online/projects/orbit/"
   license "MIT"
-  version "0.4.20"
+  version "0.4.22"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/orbit/releases/download/v0.4.20/orbit-v0.4.20-aarch64-apple-darwin.tar.gz"
-      sha256 "edabb0e1a6fac15c2f8ab24d2d8f5c324edc139059bada4472f89064b898cb0a"
+      url "https://github.com/meridian-online/orbit/releases/download/v0.4.22/orbit-v0.4.22-aarch64-apple-darwin.tar.gz"
+      sha256 "47a4b5a1fae9145d3ae13c5fd964b2fa2cdbe741d5baddfd9729f68bebcdb287"
     else
-      url "https://github.com/meridian-online/orbit/releases/download/v0.4.20/orbit-v0.4.20-x86_64-apple-darwin.tar.gz"
-      sha256 "9cdf50b3b283a8f165a3a0bd3c816719b99b1a77fed9a2932ae4c7cda06a8a85"
+      url "https://github.com/meridian-online/orbit/releases/download/v0.4.22/orbit-v0.4.22-x86_64-apple-darwin.tar.gz"
+      sha256 "7af01f78d82ba09a8f3765df0c2118a93c0c89d28bdd5832323c45655fcadeeb"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/orbit/releases/download/v0.4.20/orbit-v0.4.20-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "88bbc2298c1ccef0f19a9a543d332484b34c3ffb4c73051c7ada7e2203db1941"
+      url "https://github.com/meridian-online/orbit/releases/download/v0.4.22/orbit-v0.4.22-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "7effedcd2d461ab287c864ce394c892eac9789b93deecdda807e99c6c6b967eb"
     else
-      url "https://github.com/meridian-online/orbit/releases/download/v0.4.20/orbit-v0.4.20-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2abfc3631cd380881dda3e27af04c4e22be366cee0a295b84f8db08667764b66"
+      url "https://github.com/meridian-online/orbit/releases/download/v0.4.22/orbit-v0.4.22-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8d50b96d4408fd3b904c2c6f4140d057891525bdefadb90623694fe4263d07f0"
     end
   end
 
