@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.23"
+  version "0.6.24"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.23/finetype-v0.6.23-aarch64-apple-darwin.tar.gz"
-      sha256 "5660dd0f73502a1b2b0184accdf265e1ebcb23737cb65e3bd4c7bfab1c3de0ee"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.24/finetype-v0.6.24-aarch64-apple-darwin.tar.gz"
+      sha256 "1426654966aa283218811dd326f85af698cd582dad228d3a750ede101796acdb"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.23/finetype-v0.6.23-x86_64-apple-darwin.tar.gz"
-      sha256 "76cb9399ced0381950583842acc2802b5cd20d022524b76728103f5cab1a49cf"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.24/finetype-v0.6.24-x86_64-apple-darwin.tar.gz"
+      sha256 "9724dc0c5295cf5e969e15e9e1cae4275026b9c0bc6f471caf4dd01ef74c91b9"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.23/finetype-v0.6.23-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "194ab67301c32d1b0ec9cb07a85a340e65ea565f2354bf76e00613d597a8d5eb"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.24/finetype-v0.6.24-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3e4c18ddebf97c2bcd38cb8e6a761df5dae514749f41f9c877786799b61b93a4"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.23/finetype-v0.6.23-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "c7dd6c0cf348a6f381db025bbd92a35f582f7d4532dcffd6ff50ef11d4cb410b"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.24/finetype-v0.6.24-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "45fb942dbff78d93e1106a65725c56faa5efea5897c10dc27f930ee6848dd733"
     end
   end
 
