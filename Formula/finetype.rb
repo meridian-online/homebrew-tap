@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.26"
+  version "0.6.27"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.26/finetype-v0.6.26-aarch64-apple-darwin.tar.gz"
-      sha256 "e5ece5b505ef14966da0dc616cea09f37364437d5eb92f132a8dd2fccfd5b141"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.27/finetype-v0.6.27-aarch64-apple-darwin.tar.gz"
+      sha256 "396e5eece142ca6eea777e199a2bc3d4376c8006f9a1ea5d9f9e48a9b2198235"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.26/finetype-v0.6.26-x86_64-apple-darwin.tar.gz"
-      sha256 "7711c6cf8ad30352aeb0dad5e09fb8acc6ae981d9bbbbce5cb8b9e3ce25bba7c"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.27/finetype-v0.6.27-x86_64-apple-darwin.tar.gz"
+      sha256 "e36be2ddf7007a79d21e7802878dc60ac4ade9630398f0c3e124929a7ed6c2ac"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.26/finetype-v0.6.26-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "1c270247ab1ea13ee37276084ac92ff9e16440bc257d9149f8b0bcfea17d1d38"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.27/finetype-v0.6.27-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "dabb76706f72d07c87c78e439c6b7aa3cc38fbe49559aa7550eb7ca973b111bc"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.26/finetype-v0.6.26-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "bd8c19fc68b15583821dba6b66a6f15913b9dd479cdb590e770d9a638be0f03f"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.27/finetype-v0.6.27-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a0d4c2236af9593d300d591bb62410145c2431d46c83dd263a58cf6033f554e5"
     end
   end
 
