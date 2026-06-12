@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.28"
+  version "0.6.29"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.28/finetype-v0.6.28-aarch64-apple-darwin.tar.gz"
-      sha256 "206dbf97f68c87d55077746ac723ff1024ea2ad614685700aaa05b1df4cf391a"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-aarch64-apple-darwin.tar.gz"
+      sha256 "d5784f9a888fe880c4ebefc851c6311793be1f6277be44e7d98fa97cd4b3ea37"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.28/finetype-v0.6.28-x86_64-apple-darwin.tar.gz"
-      sha256 "88ca7c6442875f37c5a4ef697157829719a5f7180a014f76d22a863a0a2c7bcd"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-x86_64-apple-darwin.tar.gz"
+      sha256 "dd2d628763a9518f559f4b56b5a389b43a07387b8d0126475a584fc6453a982d"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.28/finetype-v0.6.28-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "56f972b09638b51827023d89322bf8d97f3e99e00bb643fc7b4addc970b287e2"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a040d7febdaf47e86d3984a0eab433682fcd84b4ea8d2f808a3e61bce5d64cde"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.28/finetype-v0.6.28-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e45330f94bb940ce0c2f8ce9a8d88aac74cc020acd2d1cb1eb243b7248c23d5c"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "fffb8223df453b1a16a3212817ab53240fc7c80c6acd3056a59c539fdd105a57"
     end
   end
 
