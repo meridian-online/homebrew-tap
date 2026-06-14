@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.29"
+  version "0.6.30"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-aarch64-apple-darwin.tar.gz"
-      sha256 "d5784f9a888fe880c4ebefc851c6311793be1f6277be44e7d98fa97cd4b3ea37"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-aarch64-apple-darwin.tar.gz"
+      sha256 "9178cb1cf930f3c8f1b0fbc85a7608c9fd699a95ab1d4f718147be5c33ce772a"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-x86_64-apple-darwin.tar.gz"
-      sha256 "dd2d628763a9518f559f4b56b5a389b43a07387b8d0126475a584fc6453a982d"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-x86_64-apple-darwin.tar.gz"
+      sha256 "e5fffe78d5570cff1fb4c9c0da90c5a7e7af05cd6815064b30f10b06e3a447e4"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a040d7febdaf47e86d3984a0eab433682fcd84b4ea8d2f808a3e61bce5d64cde"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "e2886a0537f732057dad820e22b362598329ad599917eb83a93d702db7c2037f"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.29/finetype-v0.6.29-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fffb8223df453b1a16a3212817ab53240fc7c80c6acd3056a59c539fdd105a57"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "445f2c81170b8bf4790ea9f347485eda7033aba48d9f498ebc6b82b4f3f7247b"
     end
   end
 
