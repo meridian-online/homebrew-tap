@@ -2,25 +2,25 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.30"
+  version "0.6.31"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-aarch64-apple-darwin.tar.gz"
-      sha256 "9178cb1cf930f3c8f1b0fbc85a7608c9fd699a95ab1d4f718147be5c33ce772a"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.31/finetype-v0.6.31-aarch64-apple-darwin.tar.gz"
+      sha256 "11f90c329e135ffbe7f22a25ea2146b8b9a9af14aa2dd7579424b91d7aa30ad9"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-x86_64-apple-darwin.tar.gz"
-      sha256 "e5fffe78d5570cff1fb4c9c0da90c5a7e7af05cd6815064b30f10b06e3a447e4"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.31/finetype-v0.6.31-x86_64-apple-darwin.tar.gz"
+      sha256 "6d3665544ac70a04a074dfd9b3af219b59a0911591859942cb89f2071bbce452"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e2886a0537f732057dad820e22b362598329ad599917eb83a93d702db7c2037f"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.31/finetype-v0.6.31-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "83865d4aa392952c4d58291cb679888e98c66d91fba89ba3a319ef20bc5a29df"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.30/finetype-v0.6.30-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "445f2c81170b8bf4790ea9f347485eda7033aba48d9f498ebc6b82b4f3f7247b"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.31/finetype-v0.6.31-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "73f18f89c8e91710e38bf915b2b2961f3da337c01aa2235702079d3baa196310"
     end
   end
 
