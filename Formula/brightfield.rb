@@ -1,7 +1,6 @@
 class Brightfield < Formula
   desc "Grammar-of-graphics renderer for Meridian data (macOS)"
   homepage "https://github.com/meridian-online/brightfield"
-  version "0.1.0"
   license "MIT"
 
   depends_on :macos
