@@ -7,11 +7,11 @@ class Brightfield < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.1/brightfield-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "52ca6d0df49bfd3d11ea15e5ab074a9629953a3f07bbea0cdd567bf7b9750061"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.2/brightfield-v0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "dcb6e20e083b5b7aaea13dedde776317160ea50dc0e1b8418d496a85091515aa"
     else
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.1/brightfield-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "c765ea96e43f643320a191da57fead4248995e6dc9ef1c57f8b6b012ec73ff1b"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.2/brightfield-v0.1.2-x86_64-apple-darwin.tar.gz"
+      sha256 "88c5f39c91d648b60090f9a0f2f9b7600a143ccf93b5ec70da9bf84e3355629f"
     end
   end
 
@@ -20,10 +20,6 @@ class Brightfield < Formula
   end
 
   test do
-    # brightfield is a GUI app: no confirmed non-window --version/--help that
-    # exits cleanly, and Homebrew CI has no graphics context. Use a presence
-    # stand-in until a non-window CLI surface exists to exercise here.
-    assert_path_exists bin/"brightfield"
-    assert_predicate bin/"brightfield", :executable?
+    assert_match "brightfield", shell_output("#{bin}/brightfield --version")
   end
 end
