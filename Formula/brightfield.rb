@@ -7,11 +7,11 @@ class Brightfield < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.2/brightfield-v0.1.2-aarch64-apple-darwin.tar.gz"
-      sha256 "dcb6e20e083b5b7aaea13dedde776317160ea50dc0e1b8418d496a85091515aa"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.3/brightfield-v0.1.3-aarch64-apple-darwin.tar.gz"
+      sha256 "3c6a77261677264391c6afb58b2e489089ee31d94d7d49f6bfb39f1b931f632e"
     else
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.2/brightfield-v0.1.2-x86_64-apple-darwin.tar.gz"
-      sha256 "88c5f39c91d648b60090f9a0f2f9b7600a143ccf93b5ec70da9bf84e3355629f"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.3/brightfield-v0.1.3-x86_64-apple-darwin.tar.gz"
+      sha256 "0d4708346abff567537d6b687d6a21d3a1fffa8a034d189a10c0a0993ff1f249"
     end
   end
 
