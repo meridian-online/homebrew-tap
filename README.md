@@ -40,3 +40,5 @@ brew update
 brew upgrade finetype
 brew upgrade brightfield
 ```
+
+See decision-456 for details.
