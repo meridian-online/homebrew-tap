@@ -4,7 +4,7 @@ class Finetype < Formula
   license "MIT"
   version "0.6.61"
 
-  # Hard runtime dependency (choice 0100): profile + validate shell out
+  # Hard runtime dependency: profile + validate shell out
   # to the duckdb CLI for all CSV/Parquet ingestion.
   depends_on "duckdb"
 
