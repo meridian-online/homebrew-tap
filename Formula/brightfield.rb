@@ -5,13 +5,18 @@ class Brightfield < Formula
 
   depends_on :macos
 
+  # Leave the finetype extension's @rpath install name as packaged: rewriting
+  # it changes the file, and the application then refuses the extension as not
+  # the one bundle-manifest.sha256 records.
+  preserve_rpath if respond_to?(:preserve_rpath)
+
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.5/brightfield-v0.1.5-aarch64-apple-darwin.tar.gz"
-      sha256 "d4f180d949cdf300a6a12b7bb098c83eb18d991212d2fd48a93c220fcb4ae892"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.6/brightfield-v0.1.6-aarch64-apple-darwin.tar.gz"
+      sha256 "651ceb293affe65845ff8efb38633b2dd63fd068982abf6ca6157102cc6ccdd6"
     else
-      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.5/brightfield-v0.1.5-x86_64-apple-darwin.tar.gz"
-      sha256 "460af8a6b6a3b4b971bb4395bc6a66f6a930586d7d12c9647ea85121e218b71d"
+      url "https://github.com/meridian-online/brightfield/releases/download/v0.1.6/brightfield-v0.1.6-x86_64-apple-darwin.tar.gz"
+      sha256 "ce8a05f9f6faba88aea053794a4dc32e27a90f7ca1b04f41d5bff02bd33e2e73"
     end
   end
 
