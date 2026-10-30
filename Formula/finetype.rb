@@ -2,7 +2,7 @@ class Finetype < Formula
   desc "Semantic type classifier for data profiling — detects data types from raw strings"
   homepage "https://meridian.online/projects/finetype/"
   license "MIT"
-  version "0.6.66"
+  version "0.6.67"
 
   # Hard runtime dependency (choice 0100): profile + validate shell out
   # to the duckdb CLI for all CSV/Parquet ingestion.
@@ -10,21 +10,21 @@ class Finetype < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.66/finetype-v0.6.66-aarch64-apple-darwin.tar.gz"
-      sha256 "acdcae842b2cd5c26670d93f3b96023f48ebaaac9fd86566b6be345ccf0334de"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.67/finetype-v0.6.67-aarch64-apple-darwin.tar.gz"
+      sha256 "e83830a788ecce5f325834351a04cfe8c924e29a48ea4997954ede0b91acdc49"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.66/finetype-v0.6.66-x86_64-apple-darwin.tar.gz"
-      sha256 "79dcf81f517054b994f93e8b21241689148b4214bb6fb1c7b4c057a2506b12b0"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.67/finetype-v0.6.67-x86_64-apple-darwin.tar.gz"
+      sha256 "029181cf42f28c3ad0a727ceb196046ad56b0d7cda2c4a4892f206ad57794755"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.66/finetype-v0.6.66-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "610139d5dd0ef9093ad9cc5668367d73f45144a6d41de5a6038cbb2dd06ed098"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.67/finetype-v0.6.67-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "a28129f5f5a4431ad59a54131c38eb63455bd65cd00a1810fe8cdab153784083"
     else
-      url "https://github.com/meridian-online/finetype/releases/download/v0.6.66/finetype-v0.6.66-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fd6dec8dcd69615a8c33870e8edc0556881cd477a36ef75e6a60fb50205ad8b4"
+      url "https://github.com/meridian-online/finetype/releases/download/v0.6.67/finetype-v0.6.67-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8c16ce04eb6fca1d28462a6de6a74c9f9fadd119c21226e99b59dc8db317132b"
     end
   end
 
