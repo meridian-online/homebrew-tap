@@ -28,7 +28,7 @@
 2. A release whose `signing` output is `adhoc` or empty: `update-homebrew` fails before touching the tap (Task 3 test).
 3. A cask where the shim execs a relative path or the bare `brightfield` on PATH: the layout check refuses it (Task 1 test).
 4. A cask whose url template loses `#{arch}`: the asset check would fetch the arm asset for both architectures and pass; it must refuse fewer than two distinct urls (Task 2 test).
-5. Running a branch install with an older formula install still linked: refused with the uninstall message, not a silent skip (Task 5 case).
+5. Running a branch install with an older formula install still linked: refused with the uninstall message, not a silent skip (Task 5 `formula-linked` install).
 
 ---
 
@@ -69,15 +69,17 @@
 ### Task 3: Release job writes the cask from a notarised build
 
 **Files:**
-- Create: `scripts/move-tap-to-cask.sh` (with cases added to `check-cask-layout-selftest.sh`)
+- Create: `scripts/move-tap-to-cask.sh` (with cases added to `check-cask-layout-selftest.sh`), `scripts/require-notarised.sh` and `scripts/require-notarised-selftest.sh` (a new xtask step `require-notarised-selftest`, run from public-hygiene.yml beside the other packaging self-tests)
 - Modify: `.github/workflows/release.yml` (`update-homebrew` job and the header comment), `scripts/check-release-tag.py` (mutation at line ~630 that patches `    needs: release\n`)
 
 **Interfaces:**
 - Produces: `scripts/move-tap-to-cask.sh TAPDIR` — removes `TAPDIR/Formula/brightfield.rb` if present; writes `TAPDIR/tap_migrations.json` with the brightfield key added, other keys kept, sorted, 2-space JSON, created when absent; exit 2 when TAPDIR is not a directory or the JSON does not parse. Uses `python3` (present on ubuntu-latest).
+- Produces: `scripts/require-notarised.sh SIGNING` — exit 0 when SIGNING is exactly `notarised`; exit 1 with `::error::` naming the value for `adhoc`, an empty value or anything else. Its self-test also reads release.yml and fails when `update-homebrew` does not run it as its first step with the build's signing output through `env:`, or when that step carries an `if:` or `continue-on-error:`.
 
 - [ ] **Step 1: Add self-test cases**: no json → created with one key; json with `{"other": "x/y/z"}` → both keys; formula present → removed; invalid json → exit 2 and file untouched.
+- [ ] **Step 1b: Write `require-notarised-selftest.sh`**: `notarised` → 0; `adhoc`, empty and `Notarised` → 1; plus the release.yml wiring assertions above.
 - [ ] **Step 2: Run**, expect failure. **Step 3: Implement.** **Step 4: Run** → pass.
-- [ ] **Step 5: Edit `update-homebrew`**: `needs: [build, release]`; first step fails with `::error::` unless `needs.build.outputs.signing == 'notarised'` (read through `env:`); download the two `.dmg.sha256` sidecars; write `homebrew-tap/Casks/brightfield.rb` with `write-brightfield-cask.sh`; `check-cask-layout.sh`; check the cask names the tag's version; `ruby -c`; `check-cask-asset.sh --min-pairs 2`; `move-tap-to-cask.sh homebrew-tap`; `git add -A Casks Formula tap_migrations.json`; same commit title `Update brightfield to ${GITHUB_REF_NAME}`. Rewrite the job's and the file header's comments for the cask.
+- [ ] **Step 5: Edit `update-homebrew`**: `needs: [build, release]`; first step runs `scripts/require-notarised.sh "$SIGNING"` with `SIGNING: ${{ needs.build.outputs.signing }}` in `env:` (the build job already declares that output); download the two `.dmg.sha256` sidecars; write `homebrew-tap/Casks/brightfield.rb` with `write-brightfield-cask.sh`; `check-cask-layout.sh`; check the cask names the tag's version; `ruby -c`; `check-cask-asset.sh --min-pairs 2`; `move-tap-to-cask.sh homebrew-tap`; `git add -A Casks Formula tap_migrations.json`; same commit title `Update brightfield to ${GITHUB_REF_NAME}`. Rewrite the job's and the file header's comments for the cask.
 - [ ] **Step 6: Update `check-release-tag.py`'s mutation** to the new `needs:` line. Run `cargo xtask ci --step` for the release-tag wiring and rehearsal steps (find their names with `cargo xtask ci --list`) → pass.
 - [ ] **Step 7: Commit** "Write the cask from a notarised release and retire the formula".
 
@@ -100,15 +102,16 @@
 
 **Interfaces:**
 - Consumes: Tasks 1 and 4.
-- Produces: `scripts/check-brew-install-branch.sh DIST TAG [--allow-local] [--appdir DIR]`; DIST holds `brightfield-TAG-aarch64-apple-darwin.dmg`. Three installs through a local git tap, each with the cask from `write-brightfield-cask.sh` pointed at a `file://` copy:
+- Produces: `scripts/check-brew-install-branch.sh DIST TAG [--allow-local] [--appdir DIR]`; DIST holds `brightfield-TAG-aarch64-apple-darwin.dmg`. Four installs through a local git tap, each with the cask from `write-brightfield-cask.sh` pointed at a `file://` copy:
   - `packaged`: passes `--check-type-source` and `--check-engine` through the shim.
   - `symlinked`: the cask's `binary` swapped for the app binary itself; `--check-type-source` exits 2 (no type source), proving the shim is needed.
   - `tampered`: a copy of the .dmg with one byte of the FineType extension changed (rebuild the image with `hdiutil`); `--check-type-source` refuses it.
+  - `formula-linked`: before installing, `$(brew --prefix)/bin/brightfield` is made a symlink into `$(brew --prefix)/Cellar/brightfield/0.0.0-fixture/bin/brightfield` (only when nothing is at that path; removed afterwards whatever happens); `brew install --cask` must exit non-zero, its output must name `brew uninstall --formula brightfield`, and the symlink must be unchanged.
   It clears quarantine (`xattr -dr com.apple.quarantine`) on the installed app only when `spctl` does not report it notarised, and says so in the log. The spctl verdict is printed either way.
 
-- [ ] **Step 1: Rewrite the script** around the three installs; drop the `preserve_rpath` case and say why in the header (casks do not relocate dylibs).
+- [ ] **Step 1: Rewrite the script** around the four installs; drop the `preserve_rpath` case and say why in the header (casks do not relocate dylibs).
 - [ ] **Step 2: Update `BREW_INSTALL_BRANCH_PATHS`** for the renamed scripts; run `cargo test -p xtask` → pass.
-- [ ] **Step 3: Run it locally** against the notarised v0.1.8 image: `DIST=$(mktemp -d)`, copy the image there as `brightfield-v0.1.8-aarch64-apple-darwin.dmg`, `scripts/check-brew-install-branch.sh "$DIST" v0.1.8 --allow-local --appdir <scratch>` → exit 0 with all three installs as required. Remove the local tap and installs afterwards.
+- [ ] **Step 3: Run it locally** against the notarised v0.1.8 image: `DIST=$(mktemp -d)`, copy the image there as `brightfield-v0.1.8-aarch64-apple-darwin.dmg`, `scripts/check-brew-install-branch.sh "$DIST" v0.1.8 --allow-local --appdir <scratch>` → exit 0 with all four installs as required. Remove the local tap and installs afterwards.
 - [ ] **Step 4: Commit** "Install the branch's disk image through a cask".
 
 ### Task 6: Docs, and the tap README
